@@ -3,7 +3,7 @@ if(NOT PLAYRHO_REAL_TYPE)
 endif()
 message(STATUS "PLAYRHO_REAL_TYPE=${PLAYRHO_REAL_TYPE}")
 
-file(REMOVE "Common/Real.hpp")
+#file(REMOVE "Common/Real.hpp")
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/Common/Real.hpp.in" "${CMAKE_CURRENT_SOURCE_DIR}/Common/Real.hpp")
 
 file(GLOB PLAYRHO_Collision_SRCS
@@ -100,6 +100,7 @@ if(PLAYRHO_BUILD_STATIC)
 		CLEAN_DIRECT_OUTPUT 1
 		VERSION ${PLAYRHO_VERSION}
 	)
+	target_include_directories(PlayRho PUBLIC "../")
 endif()
 
 # These are used to create visual studio folders.
