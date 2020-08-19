@@ -1,0 +1,62 @@
+/* Gradient header with white text */
+.navbar {
+    color: #fff;
+    background-color: #159957;
+    background-image: linear-gradient( 120deg, #155799, #159957 );
+}
+
+.navbar-default .navbar-brand{
+    color: #fff;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+}
+
+/* white footer */
+#footer {
+    background: none;
+}
+
+/* Gradient on active menu buttons */
+.nav-pills > li.active > a {
+    background-color: #159957;
+    background-image: linear-gradient( 20deg, #157B99, #159983 );
+}
+
+/* Different font preferences */
+.title {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body, table, div, p, dl {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #606c71;
+    font-size: 17.6px;
+}
+
+/* Green headlines */
+h1, .h1, h2, .h2, h2.groupheader {
+    color: #15653C;
+}
+
+/* No border around page content */
+.panel {
+    border: none;
+}
+
+/* lower content width */
+.container {
+    max-width: 970px;
+}

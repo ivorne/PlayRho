@@ -4,3 +4,6 @@
 [submodule "Benchmark/benchmark"]
 	path = Benchmark/benchmark
 	url = https://github.com/google/benchmark
+[submodule "Documentation/doxyboot-cmake"]
+	path = Documentation/doxyboot-cmake
+	url = https://github.com/ivorne/doxyboot-cmake

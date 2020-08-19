@@ -93,3 +93,14 @@ endif(PLAYRHO_BUILD_BENCHMARK)
 if(PLAYRHO_INSTALL_DOC)
   install(DIRECTORY Documentation DESTINATION share/doc/PlayRho PATTERN ".svn" EXCLUDE)
 endif(PLAYRHO_INSTALL_DOC)
+
+
+#------------- documentation --------------------------------
+add_subdirectory( Documentation/doxyboot-cmake )
+set( DOXYBOOT_HTML_HEADER "Documentation/doxyboot_header.html" )
+set( DOXYBOOT_HTML_FOOTER "Documentation/doxyboot_footer.html" )
+set( DOXYBOOT_HTML_EXTRA_STYLESHEET "Documentation/doxyboot_style.css" )
+#set( DOXYBOOT_HTML_EXTRA_FILES "" )
+set( DOXYGEN_PROJECT_NUMBER "${PLAYRHO_VERSION}" )
+doxyboot_add_docs( doc PlayRho "./PlayRho/" )
+
