@@ -102,5 +102,5 @@ set( DOXYBOOT_HTML_FOOTER "Documentation/doxyboot_footer.html" )
 set( DOXYBOOT_HTML_EXTRA_STYLESHEET "Documentation/doxyboot_style.css" )
 #set( DOXYBOOT_HTML_EXTRA_FILES "" )
 set( DOXYGEN_PROJECT_NUMBER "${PLAYRHO_VERSION}" )
-doxyboot_add_docs( doc PlayRho "./PlayRho/" )
+doxyboot_add_docs( PlayRho_doc PlayRho "./PlayRho/" )
 
