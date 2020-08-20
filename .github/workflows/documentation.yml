@@ -1,0 +1,40 @@
+name: Documentation
+
+# Controls when the action will run. Triggers the workflow on push
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "doc"
+  doc:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-20.04
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - name: Setup environment
+      run: sudo apt-get install cmake doxygen
+          
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    # Generate documentation using CMake and doxygen
+    - name: Generate documentation
+      run: cmake . && make PlayRho_doc
+      
+    # Deploy results to subdirectory on github pages
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3.7.0-8
+      with:
+        deploy_key: ${{ secrets.DOC_DEPLOY_KEY }}
+        publish_dir: ./html
+        external_repository: ivorne/ivorne.github.io
+        publish_branch: master
+        destination_dir: PlayRho
+        
